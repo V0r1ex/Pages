@@ -1,0 +1,81 @@
+@import '../_constants';
+@import '../_mixins';
+
+.chapters {
+    background-color: $pale-blue;
+
+    &__title {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+
+    &__cards {
+        @include flex_center(30px);
+        flex-wrap: wrap;
+        margin-bottom: 60px;
+    }
+
+    &__card {
+        width: 605px;
+        padding: 42px 40px;
+        background-color: #fff;
+    }
+
+    &__btn {
+        margin-bottom: 35px;
+        padding: 24px 92px;
+    }
+
+    &__link {
+        color: $base-blue
+    }
+
+    .section-inner {
+        @include flex_center();
+        flex-direction: column
+    }
+}
+
+.chapters-card {
+
+    &__title {
+        margin-bottom: 21px;
+    }
+
+    &__text {
+        margin-bottom: 10px;
+    }
+
+    &__features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 45px;
+
+        @media (max-width: 610px) {
+            gap: 0;
+            > div + div {
+                margin-top: 10px;
+            }
+        }
+    }
+}
+
+.chapters-stat {
+    text-align: center;
+    &__title {
+        display: inline;
+    }
+
+    &__text {
+        font-size: 17px;
+        line-height: 27px;
+        color: $gray;
+        margin-left: 10px;
+    }
+}
+
+@media (max-width: 675px) {
+    .chapters__card {
+        width: 90%;
+    }
+}

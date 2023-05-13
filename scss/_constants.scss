@@ -1,0 +1,29 @@
+// fonts
+
+$cardo: 'Cardo', serif;
+$inter: 'Inter', sans-serif;
+
+// colors
+
+$base-yellow: #FFCA42;
+$base-blue: #1B3764;
+$light-blue: #B4C7E7;
+$dark-gray: #141414;
+$pale-blue: #F5F8FC;
+$gray: #969AA0;
+
+@mixin btn_fill_right() {
+    background: linear-gradient(45deg, $base-yellow 50%, transparent 50%);
+    background-position: 100%;
+    background-size: 400%;
+    transition: background-position 0.3s ease-in-out;
+    @media only screen {
+        &:hover {
+            background-position: 0;
+        }
+    }
+    @media (max-width: 480px) {
+        background-position: 0;
+        color: $base-blue !important;
+    }
+}

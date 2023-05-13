@@ -1,0 +1,126 @@
+@import '../_constants';
+@import '../_mixins';
+
+.about {
+    background-color: $pale-blue;
+    &__title {
+        margin-bottom: 33px;
+    }
+
+    &__text {
+        margin-bottom: 33px;
+    }
+
+    &-stats {
+        margin-bottom: 55px;
+        display: flex;
+    }
+
+    &-body {
+        max-width: 605px;
+    }
+
+    .section-inner {
+        @include flex_center(60px);
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+}
+.about-img-container {
+    position: relative;
+    border: 10px solid $base-yellow;
+    width: 515px;
+    height: fit-content;
+    flex-shrink: 0;
+}
+.about-img {
+    position: relative;
+    top: -20px;
+    left: -20px;
+    filter: drop-shadow(0px 0px 20px rgba(27, 55, 100, 0.3));
+}
+.about-stat {
+    flex-grow: 1;
+    & + & {
+        border-left: 2px solid $base-yellow;
+        padding-left: 25px;
+    }
+
+    &__value {
+        font-size: 54px;
+        line-height: 77px;
+        font-family: $cardo;
+    }
+}
+.about-card {
+    @include flex_center(40px);
+    padding: 15px 20px;
+    background-color: $base-blue;
+    width: 484px;
+    min-height: 161px;
+    color: $light-blue;
+    &__qr {
+        position: relative;
+        cursor: pointer;
+        .fa {
+            position: absolute;
+            bottom: 3px;
+            right: 3px;
+            color: $base-blue;
+            display: none;
+        }
+        &:not(.open):hover {
+            .fa {
+                display: block;
+            }
+        }
+    }
+    &__qr.open {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        translate: (-50% -50%);
+        scale: 3;
+        z-index: 1;
+    }
+    &__name {
+        color: $base-yellow;
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 10px;
+        font-family: $cardo;
+    }
+    &__mail {
+        margin-bottom: 5px;
+    }
+    &__info {
+        font-size: 18px;
+        line-height: 28px;
+        letter-spacing: 0.19px;
+    }
+}
+
+// media
+
+@media (max-width: 500px) {
+    .about-card {
+        width: 100%;
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 1220px) {
+    .about .section-inner {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .about-stat__value {
+        font-size: 44px;
+    }
+    .about-stat__name {
+        font-size: 16px;
+    }
+}
+

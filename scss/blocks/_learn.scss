@@ -1,0 +1,71 @@
+@import '../_constants';
+@import '../_mixins';
+
+.learn {
+    &__title {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+}
+
+.learn-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.learn-cards {
+    @include flex_center(30px);
+    flex-wrap: wrap;
+    justify-content: start;
+    margin-bottom: 60px;
+    flex-basis: 55% !important;
+    &__item {
+        height: 272px;
+        width: 303px;
+        background-color: $pale-blue;
+        padding: 30px;
+        font-family: $cardo;
+    }
+}
+
+.card {
+    &__number {
+        height: 50px;
+        width: 50px;
+        border-radius: 50%;
+        background-color: $base-yellow;
+        margin-bottom: 30px;
+        @include flex_center();
+        font-size: 23px;
+        line-height: 29px;
+    }
+
+    &__text {
+        font-size: 24px;
+        line-height: 34px;
+        color: $base-blue;
+    }
+}
+.learn-img-container {
+    position: relative;
+    border: 10px solid $base-yellow;
+    width: 490px;
+    height: fit-content;
+    flex-shrink: 0;
+}
+.learn-img {
+    position: relative;
+    top: -20px;
+    left: -20px;
+    filter: drop-shadow(0px 0px 20px rgba(27, 55, 100, 0.3));
+}
+
+// media
+
+@media (max-width: 1273px) {
+    .learn-container {
+        justify-content: center;
+    }
+}

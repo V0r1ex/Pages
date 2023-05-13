@@ -1,0 +1,129 @@
+@import '../_constants';
+@import '../_mixins';
+
+.footer {
+    background-color: $base-blue;
+    padding-bottom: 0;
+}
+.footer-top {
+    display: flex;
+    gap: 60px;
+}
+.footer-logo {
+    justify-content: start;
+    margin-bottom: 20px;
+
+    &__title {
+        color: #fff;
+    }
+}
+.footer-socials {
+    display: flex;
+    gap: 10px;
+
+    &__btn {
+        height: 55px;
+        width: 55px;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid $base-yellow;
+        @include btn_fill_right()
+    }
+
+}
+.footer-nav {
+    @include flex_center(70px);
+    flex-wrap: wrap;
+    align-items: self-start;
+    margin-bottom: 70px;
+
+    &__row {
+        display: flex;
+
+        & + & { 
+            margin-top: 30px;
+        }
+    }
+
+    &__header {
+        color: #fff;
+        width: 100px;
+        font-size: 18px;
+        line-height: 27px;
+        letter-spacing: 0.36px;
+    }
+
+    &__text {
+        margin-left: 30px;
+        color: $light-blue;
+        max-width: 234px;
+        font-size: 17px;
+        line-height: 27px;
+        letter-spacing: 0.18px;
+    }
+
+    &__title {
+        color: #fff;
+        margin-bottom: 15px;
+        font-size: 24px;
+        line-height: 34px;
+        letter-spacing: 0.384px;
+        margin-bottom: 30px;
+    }
+
+    &__item {
+        margin-bottom: 10px;
+        padding-left: 40px;
+        position: relative;
+        &::before {
+            content: '';
+            position: absolute;
+            background: url(../img/icons/dots.svg) no-repeat center/cover;
+            left: 13px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 2px;
+        }
+    }
+
+    &__link {
+        color: $light-blue;
+        font-size: 17px;
+        line-height: 31px;
+        letter-spacing: 0.18px;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+.footer-bottom {
+        @include flex_center();
+        color: $light-blue;
+        height: 75px;
+		&__author {
+            text-align: center;
+			&_ligth {
+                color: #fff;
+			}
+		}
+}
+
+// media
+
+@media (max-width: 800px) {
+    .footer-top {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 448px) {
+    .footer-nav {
+        justify-content: start;
+    }
+    .footer-nav__text {
+        width: 60%;
+    }
+}

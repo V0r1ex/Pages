@@ -1,0 +1,54 @@
+@import '../_constants';
+@import '../_mixins';
+
+.authors {
+
+    &__title {
+        text-align: center;
+        margin-bottom: 70px;
+    }
+}
+
+.books {
+    @include flex_center(20px);
+    flex-wrap: wrap
+}
+.book {
+    @include flex_center(30px);
+    flex-wrap: wrap;
+    &__body {
+        max-width: 270px;
+    }
+    &__title {
+        margin-bottom: 5px;
+        font-size: 32px;
+        line-height: 38px;
+        letter-spacing: 0.32px;
+    }
+
+    &__cost {
+        margin-bottom: 16px;
+        font-size: 21px;
+        line-height: 33px;
+        color: $base-yellow;
+    }
+
+    &__text {
+        margin-bottom: 6px;
+    }
+
+    &__category {
+        margin-bottom: 27px;
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+
+@media (max-width: 691px) {
+    .book__body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

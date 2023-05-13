@@ -1,0 +1,41 @@
+@mixin flex_center($gap: 0) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: $gap;
+}
+
+@mixin before_equal() {
+    position: absolute;
+    content: '';
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+@mixin dark_bg($opacity) {
+    content: '';
+    position: fixed;
+    pointer-events: none;
+    background-color: rgba(#000, $opacity);
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+}
+
+@mixin dark_fixed_fon($opacity) {
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(#000, $opacity);
+}
+
+@function darker($color, $tone) {
+    $adjust: -16*$tone;
+    @return adjust-color($color, $red: $adjust, $green: $adjust, $blue: $adjust);
+}
+

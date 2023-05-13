@@ -1,0 +1,73 @@
+@import '../_constants';
+@import '../_mixins';
+
+.form {
+    
+    form {
+        @include flex_center();
+        padding: 100px 150px;
+        text-align: center;
+        flex-direction: column;
+        background-color: $base-yellow;
+        box-shadow: 0px 0px 19px rgba(0, 0, 0, 0.18);
+        border-radius: 5px;
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 25px;
+        &::after {
+            background-color: $base-blue;
+        }
+    }
+
+    &__text {
+        color: $base-blue;
+        margin-bottom: 50px;
+        max-width: 550px;
+        margin: 0 auto;
+        margin-bottom: 50px;
+    }
+
+    &__row {
+        width: 100%;
+        @include flex_center(16px);
+        min-height: 70px;
+    }
+
+    &__input {
+        background-color: #fff;
+        padding: 20px 40px;
+        height: 100%;
+        flex-grow: 1;
+        border: 2px solid transparent;
+        &:focus {
+            border: 2px solid $base-blue;
+        }
+    }
+
+    &__btn {
+        padding: 20px;
+        height: 100%;
+        background-color: $base-blue;
+        color: #fff;
+        width: 328px;
+    }
+}
+
+@media (max-width: 830px) {
+    .form {
+        form {
+            padding: 50px;
+            width: 100%;
+        }
+        &__row {
+            flex-direction: column;
+            button, input {
+                width: 100%;
+            }
+        }
+    }
+}
+
